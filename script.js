@@ -28,30 +28,29 @@ document.addEventListener('DOMContentLoaded', function () {
         taskList.appendChild(li);
     }
 
-    // Add new task
+    // Adding new task function
     function addTask() {
         const taskText = taskInput.value.trim();
-        if (taskText === '') return; // Ignore empty input
+        if (taskText === '') return; 
 
-        addTaskToDOM(taskText); // Add task to UI
+        addTaskToDOM(taskText); 
 
-        // Get existing tasks, add the new task, then save back to localStorage
         const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
         tasks.push(taskText);
         saveTasks(tasks);
 
-        taskInput.value = ''; // Clear input field
+        taskInput.value = ''; 
     }
 
-    // Remove task
+    // Removing old tasks
     function removeTask(taskText, taskElement) {
         let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
         tasks = tasks.filter(task => task !== taskText); // Remove task from array
         saveTasks(tasks); // Save updated tasks to localStorage
 
-        taskElement.remove(); // Remove from DOM
+        taskElement.remove(); 
     }
 
     addTaskBtn.addEventListener('click', addTask);
-    loadTasks(); // Load tasks when page loads
+    loadTasks(); // Load tasks
 });

@@ -1,6 +1,5 @@
     // Setup Event Listener for Page Load
 document.addEventListener('DOMContentLoaded', function () {
-    // Select DOM Elements
 
     const addButton = document.getElementById('add-task-btn'); // The 'Add Task' button
     const taskInput = document.getElementById('task-input'); // The input field for tasks
@@ -85,6 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Step 7: Load existing tasks from Local Storage when the page loads
+    // Step 7: Load existing tasks from Local Storage 
     loadTasks();
 });
